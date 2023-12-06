@@ -16,7 +16,7 @@ from src.utils import save_object
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path = os.path.join('artifcacts', 'preprocessor.pkl')
+    preprocessor_obj_file_path = os.path.join('artifacts', 'preprocessor.pkl')
 
 class DataTransformation:
     def __init__(self):
@@ -82,10 +82,10 @@ class DataTransformation:
             numerical_columns = ["writing_score", "reading_score"]
 
             input_feature_train_df = train_df.drop(columns=[target_colunm_name], axis=1)
-            target_feature_train_df = train_df=[target_colunm_name]
+            target_feature_train_df = train_df[target_colunm_name]
 
             input_feature_test_df = test_df.drop(columns=[target_colunm_name], axis=1)
-            target_feature_test_df = test_df=[target_colunm_name]
+            target_feature_test_df = test_df[target_colunm_name]
 
             logging.info(f"Applying preprocessing object on training datafrmae and testing dataframe")
 
